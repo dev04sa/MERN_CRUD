@@ -1,0 +1,32 @@
+/* Custom styling for the entire form */
+.my-custom-form {
+  max-width: 400px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Custom styling for input fields */
+.my-custom-input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Custom styling for the submit button */
+.my-custom-button {
+  background-color: #007bff; /* Bootstrap's primary button color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Custom styling for the submit button on hover */
+.my-custom-button:hover {
+  background-color: #0056b3; /* Slightly darker shade on hover */
+}
