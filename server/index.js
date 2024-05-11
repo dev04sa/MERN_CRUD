@@ -1,6 +1,7 @@
 const express =require('express')
 const cors=require('cors')
 const dotenv = require('dotenv').config()
+const port =process.env.PORT;
 
 const mongoose=require('mongoose')
 const UserModel=require('./models/user')
@@ -45,7 +46,7 @@ app.delete('/deleteuser/:id',(req,res)=> {
 })
 
 
-app.listen(process.env.PORT,()=> {
+app.listen(port,()=> {
     console.log("Running")
 })
 
