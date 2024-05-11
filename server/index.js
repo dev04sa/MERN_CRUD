@@ -1,7 +1,6 @@
 const express =require('express')
 const cors=require('cors')
 const dotenv = require('dotenv').config()
-const port =process.env.PORT;
 
 const mongoose=require('mongoose')
 const UserModel=require('./models/user')
@@ -45,8 +44,14 @@ app.delete('/deleteuser/:id',(req,res)=> {
     .catch(err => res.json(err))
 })
 
+const port = process.env.PORT || 10000; // Set default port to 10000 if PORT environment variable is not defined
+const host = '0.0.0.0';
 
-app.listen(port,()=> {
-    console.log("Running")
-})
+app.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
+});
+
+
+
+
 
