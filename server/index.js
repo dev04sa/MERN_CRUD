@@ -1,12 +1,15 @@
 const express =require('express')
 const cors=require('cors')
+const dotenv = require('dotenv').config()
+
 const mongoose=require('mongoose')
 const UserModel=require('./models/user')
 const app=express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb://127.0.0.1/Crud').then( ()=> console.log("Success") );
+mongoose.connect(process.env.MONGO_URL).then( ()=> console.log("Database connnected") );
+// mongoose.connect('mongodb://127.0.0.1/Crud').then( ()=> console.log("Success") );
 
 
 app.get('/',(req,res)=> {
@@ -42,7 +45,7 @@ app.delete('/deleteuser/:id',(req,res)=> {
 })
 
 
-app.listen(3001,()=> {
+app.listen(process.env.PORT,()=> {
     console.log("Running")
 })
 
