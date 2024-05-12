@@ -5,6 +5,8 @@ import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import { addUser } from './redux/UserSlice';
 import { useNavigate } from 'react-router-dom'; 
+const app_url=import.meta.env.VITE_API_URL
+
 
 const CreateUser = () => {
     const [name,setName]=useState();
@@ -15,7 +17,7 @@ const CreateUser = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/create',{name,email,age})
+        axios.post(`${app_url}/create`,{name,email,age})
     .then(result => {
       dispatch(addUser(result.data))
       console.log(result)
